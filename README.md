@@ -32,6 +32,89 @@ ROI:                            9.6–16×
 
 ---
 
+## How It Works — Calculation Map
+
+```mermaid
+flowchart TD
+    subgraph INPUTS["📋 Inputs"]
+        IND["Industry\n(dropdown — 15 options)"]
+        EARN["Annual Earnings\nSDE / EBITDA / Revenue"]
+        CONC["Top Customer %\n(slider)"]
+        YRS["Years in Business"]
+    end
+
+    subgraph QUESTIONS["🔍 8 Owner Dependency Questions (Value Builder: Hub & Spoke)"]
+        direction TB
+        Q1["🔑 Can business run 30d without you?\nweight: 20"]
+        Q2["💲 Pricing rules documented?\nweight: 15"]
+        Q3["🤝 Supplier relationships documented?\nweight: 15"]
+        Q4["📋 Written SOPs for core workflows?\nweight: 15"]
+        Q5["👥 Management team in place?\nweight: 15"]
+        Q6["🧑‍💼 Customer relationships tied to business?\nweight: 10"]
+        Q7["📊 3 years of clean financials?\nweight: 5"]
+        Q8["📝 Written succession plan?\nweight: 5"]
+    end
+
+    subgraph SCORING["🧮 Scoring Engine"]
+        DEP_SCORE["Owner Dependency Score\n0–100 (sum of checked weights)"]
+        ADJ_A["Multiple Adjustment — Scenario A\n≥85 → +0.3×\n≥70 →  0.0×\n≥55 → -0.4×\n≥40 → -0.8×\n≥25 → -1.2×\n<25  → -1.8×"]
+        IMP_SCORE["Improved Score — Scenario B\n4 dims flipped by context layer\n+pricing +supplier +SOPs +customers"]
+        ADJ_B["Multiple Adjustment — Scenario B\n(same lookup, improved score)"]
+        CONC_ADJ["Concentration Adjustment\n>50% → -0.5×\n>25% → -0.2×\n≤25% →  0.0×"]
+    end
+
+    subgraph MULTIPLES["📊 Industry Base Multiple (BizBuySell / IBBA)"]
+        BASE["Mid multiple by industry\ne.g. Auto Dealer → 3.2×\nIT/MSP → 5.5×\nRestaurant → 2.3×"]
+    end
+
+    subgraph CONTEXT["🧱 Context Layer (4 of 8 dimensions)"]
+        CL1["Pricing rules"]
+        CL2["Supplier relationships"]
+        CL3["Core SOPs"]
+        CL4["Customer relationships"]
+    end
+
+    subgraph OUTPUT["📈 Outputs"]
+        SCENA["Scenario A — Today\nbase + dep_adj_A + conc_adj\n= Effective Multiple A\n× earnings = Sale Price A"]
+        SCENB["Scenario B — After context layer\nbase + dep_adj_B + conc_adj\n= Effective Multiple B\n× earnings = Sale Price B"]
+        DELTA["💰 Valuation Gap\nB − A"]
+        ROI["ROI\nGap ÷ engagement cost\n(scales with earnings size)"]
+    end
+
+    IND --> BASE
+    EARN --> SCENA
+    EARN --> SCENB
+    CONC --> CONC_ADJ
+
+    Q1 & Q2 & Q3 & Q4 & Q5 & Q6 & Q7 & Q8 --> DEP_SCORE
+    DEP_SCORE --> ADJ_A
+
+    CL1 & CL2 & CL3 & CL4 -->|"flip 'No' → 'Yes'"| IMP_SCORE
+    IMP_SCORE --> ADJ_B
+
+    BASE --> SCENA
+    BASE --> SCENB
+    ADJ_A --> SCENA
+    ADJ_B --> SCENB
+    CONC_ADJ --> SCENA
+    CONC_ADJ --> SCENB
+
+    SCENA --> DELTA
+    SCENB --> DELTA
+    DELTA --> ROI
+
+    style INPUTS fill:#e3f2fd,stroke:#1565c0
+    style QUESTIONS fill:#fff8e1,stroke:#f57f17
+    style SCORING fill:#f3e5f5,stroke:#6a1b9a
+    style MULTIPLES fill:#e8f5e9,stroke:#2e7d32
+    style CONTEXT fill:#fce4ec,stroke:#880e4f
+    style OUTPUT fill:#e0f7fa,stroke:#006064
+    style DELTA fill:#c8e6c9,stroke:#2e7d32,color:#1b5e20
+    style ROI fill:#c8e6c9,stroke:#2e7d32
+```
+
+---
+
 ## Run Locally
 
 ```bash
