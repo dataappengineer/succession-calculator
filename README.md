@@ -32,6 +32,89 @@ ROI:                            9.6–16×
 
 ---
 
+## The Math
+
+**Inputs**
+
+| Symbol | Meaning |
+|---|---|
+| $I$ | Industry (categorical) |
+| $E$ | Annual earnings — SDE, EBITDA, or Revenue |
+| $c$ | Top customer share of revenue (%) |
+| $\mathbf{a} = (a_1, \ldots, a_8)$ | Binary answers to the 8 dependency questions, $a_i \in \{0,1\}$ |
+
+---
+
+**Owner Dependency Score**
+
+Weights $\mathbf{w} = (20, 15, 15, 15, 15, 10, 5, 5)$ correspond to the 8 questions in order.
+
+$$S = \sum_{i=1}^{8} w_i \cdot a_i, \qquad S \in [0,\, 100]$$
+
+---
+
+**Industry Base Multiple**
+
+$$M_{\text{base}} = \text{lookup}(I)$$
+
+e.g. Auto Dealer → $3.2\times$, IT/MSP → $5.5\times$, Restaurant → $2.3\times$
+
+---
+
+**Multiple Adjustment** (piecewise, based on dependency score)
+
+$$\delta(S) = \begin{cases} +0.3 & S \geq 85 \\ \phantom{+}0.0 & 70 \leq S < 85 \\ -0.4 & 55 \leq S < 70 \\ -0.8 & 40 \leq S < 55 \\ -1.2 & 25 \leq S < 40 \\ -1.8 & S < 25 \end{cases}$$
+
+---
+
+**Concentration Adjustment**
+
+$$\gamma(c) = \begin{cases} -0.5 & c > 50\% \\ -0.2 & 25\% < c \leq 50\% \\ \phantom{-}0.0 & c \leq 25\% \end{cases}$$
+
+---
+
+**Scenario A — Today**
+
+$$M_A = \max\!\bigl(M_{\text{base}} + \delta(S) + \gamma(c),\; 0.5\bigr)$$
+
+$$P_A = E \times M_A$$
+
+---
+
+**Context Layer — Improved Score**
+
+The context layer forces $a_i = 1$ for the 4 dimensions it encodes (pricing, supplier, SOPs, customer relationships — indices 2, 3, 4, 6). Define $\mathbf{a}'$ as $\mathbf{a}$ with those four entries flipped:
+
+$$S' = S + \sum_{i \,\in\, \{2,3,4,6\}} w_i \cdot (1 - a_i)$$
+
+The incremental lift $S' - S$ is zero for owners who already documented those dimensions, and up to $+55$ points for owners who answered "No" to all four.
+
+---
+
+**Scenario B — After Context Layer**
+
+$$M_B = \max\!\bigl(M_{\text{base}} + \delta(S') + \gamma(c),\; 0.5\bigr)$$
+
+$$P_B = E \times M_B$$
+
+---
+
+**Valuation Gap**
+
+$$\Delta = P_B - P_A = E \cdot (M_B - M_A)$$
+
+---
+
+**Engagement Cost & ROI**
+
+Cost scales with earnings size:
+
+$$[C_{\text{low}},\, C_{\text{high}}] = \begin{cases} [\$8k,\, \$15k] & E < \$100k \\ [\$15k,\, \$25k] & \$100k \leq E < \$300k \\ [\$25k,\, \$40k] & \$300k \leq E < \$600k \\ [\$40k,\, \$65k] & E \geq \$600k \end{cases}$$
+
+$$\text{ROI} \in \left[\frac{\Delta}{C_{\text{high}}},\; \frac{\Delta}{C_{\text{low}}}\right]$$
+
+---
+
 ## How It Works — Calculation Map
 
 ```mermaid
