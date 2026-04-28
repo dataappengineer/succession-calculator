@@ -16,7 +16,7 @@ M&A practitioner literature.
 | 1 | Owner dependency discount range (15–40% claim) | [01-owner-dependency-discount-validation.md](01-owner-dependency-discount-validation.md) | ✅ Complete |
 | 2 | δ(S) breakpoint values (-1.8× to +0.3×) | [02-delta-breakpoints-validation.md](02-delta-breakpoints-validation.md) | ✅ Complete |
 | 3 | Customer concentration thresholds (25%, 50%) | [03-customer-concentration-threshold.md](03-customer-concentration-threshold.md) | ✅ Complete |
-| 4 | Context layer documentation impact | [04-context-layer-documentation-impact.md](04-context-layer-documentation-impact.md) | ⏳ Pending |
+| 4 | Context layer documentation impact | [04-context-layer-documentation-impact.md](04-context-layer-documentation-impact.md) | ✅ Complete |
 | 5 | Methodology defense summary (client-facing) | [05-methodology-defense-summary.md](05-methodology-defense-summary.md) | ⏳ Pending |
 
 ---
