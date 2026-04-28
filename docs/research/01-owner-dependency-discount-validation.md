@@ -7,11 +7,29 @@
 
 ---
 
-Gemini output follows verbatim below
+## Table of Contents
+
+- [Structural Valuation Adjustments for Key Person Risk and Owner Dependency](#structural-valuation-adjustments-for-key-person-risk-and-owner-dependency-in-small-market-private-enterprise-transactions)
+- [Conceptual Framework and Definitions of Management Dependency Risk](#conceptual-framework-and-definitions-of-management-dependency-risk)
+- [Quantitative Benchmarks for Owner Dependency Multiples and Value Reductions](#quantitative-benchmarks-for-owner-dependency-multiples-and-value-reductions)
+  - [Practitioner Data on Multiple Compression](#practitioner-data-on-multiple-compression)
+  - [IBBA and M&A Source Market Pulse Findings](#ibba-and-ma-source-market-pulse-findings)
+- [Professional Valuation Theory: The Shannon Pratt Key Person Discount](#professional-valuation-theory-the-shannon-pratt-key-person-discount)
+- [Integration of Key Person Risk into the Discount Rate](#integration-of-key-person-risk-into-the-discount-rate)
+- [The Multi-Attribute Utility Model (MUM) for Personal Goodwill Allocation](#the-multi-attribute-utility-model-mum-for-personal-goodwill-allocation)
+  - [The Mechanics of MUM Allocation](#the-mechanics-of-mum-allocation)
+  - [Empirical Findings using the MUM Model](#empirical-findings-using-the-mum-model)
+- [Normalization of Earnings and the "Hidden" Management Replacement Cost](#normalization-of-earnings-and-the-hidden-management-replacement-cost)
+- [Academic Research and Peer-Reviewed Citations on Concentration Risk](#academic-research-and-peer-reviewed-citations-on-concentration-risk)
+- [Impact on Deal Structure: The "Contingent Value" Discount](#impact-on-deal-structure-the-contingent-value-discount)
+- [Institutional Preparedness and the "Value Gap"](#institutional-preparedness-and-the-value-gap)
+- [Summary of Quantified Valuation Discounts](#summary-of-quantified-valuation-discounts)
+- [Conclusions on the Financial Impact of Management Centralization](#conclusions-on-the-financial-impact-of-management-centralization)
+- [Works Cited](#works-cited)
 
 ---
 
-Structural Valuation Adjustments for Key Person Risk and Owner Dependency in Small-Market Private Enterprise Transactions
+## Structural Valuation Adjustments for Key Person Risk and Owner Dependency in Small-Market Private Enterprise Transactions
 
 The valuation of small and medium-sized enterprises (SMEs) with transaction values ranging from $500,000 to $10,000,000 occupies a specialized niche within the private capital markets, characterized by an acute sensitivity to human capital risks. Within this segment, the most significant non-market driver of valuation volatility is owner dependency, often conceptualized by practitioners and academics as "key man risk" or the "hub-and-spoke" operational model. This condition refers to a state where the business's revenue generation, operational continuity, and strategic viability are fundamentally anchored to the individual efforts, relationships, or specialized knowledge of the principal owner. Professional valuation standards and transaction data from prominent industry bodies confirm that when a business is perceived as an extension of the individual rather than a transferable institution, it suffers a material reduction in its enterprise value. This report provides an exhaustive quantification of these valuation discounts, synthesizing data from peer-reviewed academic research, the International Business Brokers Association (IBBA), BizBuySell, the Exit Planning Institute (EPI), and the Pepperdine Private Capital Markets Survey.
 
