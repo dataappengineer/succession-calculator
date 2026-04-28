@@ -63,19 +63,19 @@ e.g. Auto Dealer → $3.2\times$, IT/MSP → $5.5\times$, Restaurant → $2.3\ti
 
 **Multiple Adjustment** (piecewise, based on dependency score)
 
-$$\delta(S) = \begin{cases} +0.3 & S \geq 85 \\ \phantom{+}0.0 & 70 \leq S < 85 \\ -0.4 & 55 \leq S < 70 \\ -0.8 & 40 \leq S < 55 \\ -1.2 & 25 \leq S < 40 \\ -1.8 & S < 25 \end{cases}$$
+$$\delta(S) = \begin{cases} +0.3 & S \geq 85 \\ +0.0 & 70 \leq S < 85 \\ -0.4 & 55 \leq S < 70 \\ -0.8 & 40 \leq S < 55 \\ -1.2 & 25 \leq S < 40 \\ -1.8 & S < 25 \end{cases}$$
 
 ---
 
 **Concentration Adjustment**
 
-$$\gamma(c) = \begin{cases} -0.5 & c > 50\% \\ -0.2 & 25\% < c \leq 50\% \\ \phantom{-}0.0 & c \leq 25\% \end{cases}$$
+$$\gamma(c) = \begin{cases} -0.5 & c > 50\% \\ -0.2 & 25\% < c \leq 50\% \\ +0.0 & c \leq 25\% \end{cases}$$
 
 ---
 
 **Scenario A — Today**
 
-$$M_A = \max\!\bigl(M_{\text{base}} + \delta(S) + \gamma(c),\; 0.5\bigr)$$
+$$M_A = \max\bigl(M_{\text{base}} + \delta(S) + \gamma(c),\; 0.5\bigr)$$
 
 $$P_A = E \times M_A$$
 
@@ -85,7 +85,7 @@ $$P_A = E \times M_A$$
 
 The context layer forces $a_i = 1$ for the 4 dimensions it encodes (pricing, supplier, SOPs, customer relationships — indices 2, 3, 4, 6). Define $\mathbf{a}'$ as $\mathbf{a}$ with those four entries flipped:
 
-$$S' = S + \sum_{i \,\in\, \{2,3,4,6\}} w_i \cdot (1 - a_i)$$
+$$S' = S + \sum_{i \in \{2,3,4,6\}} w_i \cdot (1 - a_i)$$
 
 The incremental lift $S' - S$ is zero for owners who already documented those dimensions, and up to $+55$ points for owners who answered "No" to all four.
 
@@ -93,7 +93,7 @@ The incremental lift $S' - S$ is zero for owners who already documented those di
 
 **Scenario B — After Context Layer**
 
-$$M_B = \max\!\bigl(M_{\text{base}} + \delta(S') + \gamma(c),\; 0.5\bigr)$$
+$$M_B = \max\bigl(M_{\text{base}} + \delta(S') + \gamma(c),\; 0.5\bigr)$$
 
 $$P_B = E \times M_B$$
 
