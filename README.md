@@ -10,24 +10,40 @@ Built by **[Ctrl Shift](https://ctrl-shift.ai)** (Evan Pitchie + Giovanni Brucol
 
 ## What It Does
 
-The calculator takes a business owner through two scenarios:
+The calculator takes a business owner through two scenarios and produces a comprehensive diagnostic report:
 
-- **Scenario A — What a buyer sees today:** business value based on documented data only, with an owner dependency discount applied based on how much institutional knowledge lives only in the owner's head.
+- **Scenario A — What a buyer sees today:** business value with an owner dependency discount applied based on how much institutional knowledge lives only in the owner's head.
 - **Scenario B — After encoding your knowledge:** same business, same financials, but the owner dependency risk is reduced because pricing rules, supplier relationships, SOPs, and customer context are now in a certified context layer.
 
 **The gap between A and B is the ROI argument for a Ctrl Shift engagement.**
 
-### Example output
+### Report output (after clicking "Calculate My Valuation Gap")
+
+The results section produces a detailed diagnostic report with the following structure:
+
+1. **Tier badge + dynamic headline** — one of six risk tiers (BUYER-READY → CRITICAL RISK) with a colour-coded assessment and a specific headline calibrated to the owner's score.
+2. **Four metric cards** — Owner Dependency Score, Effective Multiple Today, Estimated Sale Price Today, and Recoverable Value.
+3. **Tier narrative + symptom bullets** — a detailed paragraph explaining what the score means in a real M&A context, followed by the specific patterns buyers and their advisors typically find at that risk level.
+4. **Concentration risk callout** — if the top customer exceeds 25% of revenue, a separate flag explains the additional multiple discount and what buyers probe for.
+5. **Per-question risk flag breakdown** — every "No" answer surfaces as a red-bordered card showing: the risk label, the specific implication for a buyer, the buyer due diligence flag, and whether the context layer fixes it. Every "Yes" answer surfaces as a green-bordered card with a note on how it positively affects the valuation.
+6. **Scenario A vs Scenario B comparison cards** — two side-by-side styled cards showing the full multiple math (base + dependency adjustment + concentration adjustment = effective multiple × earnings = sale price).
+7. **Valuation gap box** — a green-bordered summary with three sub-cards: valuation gap, context layer investment range, and estimated ROI.
+8. **"What exactly does the context layer change?" expander** — per-gap cards for each fixable dimension (what gets documented, how, and what the buyer sees as a result).
+9. **"What does a buyer's due diligence actually look for?" expander** — detailed educational section covering financial, operational, commercial, legal, and knowledge/transition due diligence.
+10. **CTA card** — contact block with mailto and website links for booking a discovery call.
+
+### Example figures
 
 ```
 Auto Dealer · $400,000 SDE · top customer 20% · all questions "No"
+Owner Dependency Score: 0/100 → CRITICAL RISK tier
 
-Scenario A (today):             $960,000   (2.4× effective multiple)
-Scenario B (context layer):  $1,200,000   (3.0× effective multiple)
+Scenario A (today):          $1,000,000   (2.5× effective multiple after −1.8× dep. adj.)
+Scenario B (context layer):  $1,480,000   (3.7× effective multiple after −0.8× dep. adj.)
 
-Delta:                          +$240,000
-Context layer cost:             $15k–$25k
-ROI:                            9.6–16×
+Valuation gap:                 +$480,000
+Context layer investment:       $25k–$40k
+Estimated ROI:                  12–19×
 ```
 
 ---
